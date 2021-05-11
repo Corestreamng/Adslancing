@@ -24,7 +24,7 @@
                                     <label for="">Password</label>
                                     <input type="password" name="password" id="" class = "form-control">
                                 </div>
-                                <button type="submit" class = "btn btn-success btn-block mt-2">Login</button><br>
+                                <button type="submit" class = "btn btn-success btn-block mt-2">Login</button><br><br>
                                 <span><a href="{{route('register')}}">Not registered?</a></span> 
                                 <span><a href="{{route('password.request')}}">Forgot password?</a></span> 
                                 

@@ -23,6 +23,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 </head>
 
 <body>
@@ -99,6 +100,7 @@
     <script src="{{asset('admin/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{asset('admin/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('admin/js/app-style-switcher.js')}}"></script>
     <!--Wave Effects -->
     <script src="{{asset('admin/js/waves.js')}}"></script>

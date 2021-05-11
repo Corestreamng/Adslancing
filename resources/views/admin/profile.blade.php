@@ -1,11 +1,14 @@
 @extends('admin.layouts.app')
 @section('title', 'Profile')
 @section('content')
+@include('components.auth-validation-errors')
     <!-- Row -->
     <div class="row">
         <!-- Column -->
         <div class="col-lg-4 col-xlg-3 col-md-12">
+
             <div class="white-box">
+
                 <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
                     <div class="overlay-box">
                         <div class="user-content">
@@ -34,18 +37,19 @@
         <div class="col-lg-8 col-xlg-9 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="form-horizontal form-material" action="" method="POST">
+                    <form class="form-horizontal form-material" action="{{route('users.update-profile')}}" method="POST">
                         @csrf
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-group mb-4">
                             <label class="col-md-12 p-0">Full Name</label>
                             <div class="col-md-12 border-bottom p-0">
-                                <input type="text" placeholder="{{Auth::user()->name}}"
+                                <input type="text" value="{{Auth::user()->name}}"
                                     class="form-control p-0 border-0" name="name"> </div>
                         </div>
                         <div class="form-group mb-4">
                             <label for="example-email" class="col-md-12 p-0">Email</label>
                             <div class="col-md-12 border-bottom p-0">
-                                <input type="email" placeholder="{{Auth::user()->email}}"
+                                <input type="email" value="{{Auth::user()->email}}"
                                     class="form-control p-0 border-0" name="email"
                                     id="example-email">
                             </div>

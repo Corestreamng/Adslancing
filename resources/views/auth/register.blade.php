@@ -30,9 +30,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Confirm password</label>
-                                    <input type="password" name="confirm-password" id="" class="form-control">
+                                    <input type="password" name="password_confirmation" id="" class="form-control">
                                 </div>
-                                <button type="submit" class = "btn btn-success btn-block mt-2">Register</button><br>
+                                <button type="submit" class = "btn btn-success btn-block mt-2">Register</button><br><br>
                                 <span><a href="{{route('login')}}">Already registered?</a></span> 
                                 
                             </form>
