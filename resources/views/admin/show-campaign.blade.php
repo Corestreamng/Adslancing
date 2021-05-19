@@ -87,6 +87,11 @@
                     </tr>
                     <tr>
                         <td>
+                            <a href={{route('campaigns.analytics',[$campaign->id])}}><i class = 'fas fa-chart-bar'></i>Show Analytics</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <a href="{{route('campaigns.edit-billing',[$campaign->id])}}" class="btn btn-primary btn-block">
                                 <i class='fas fa-edit'></i> Edit Billing
                             </a>
@@ -159,7 +164,6 @@
                             <i class="fas fa-edit"></i> Edit Tags
                         </a>
                     </p>
-
                 </div>
             </div>
         </div>

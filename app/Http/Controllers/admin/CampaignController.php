@@ -141,7 +141,7 @@ class CampaignController extends Controller
 
         $campaign = Campaign::find($campaign_id);
         if ($campaign->update($inputs)) {
-            return redirect()->route('campaigns.show', [$campaign_id]);
+            return redirect()->route('campaigns.show', [$campaign_id])->with('msg','Billing info set');
         } else {
             return back()->with('errors', 'Failed to update billing information');
         }
@@ -223,7 +223,7 @@ class CampaignController extends Controller
     {
         $campaign = Campaign::find($id);
         if($campaign->delete()){
-            return back()->with('msg','Campaign deleted')
+            return back()->with('msg','Campaign deleted');
         }else{
             return back()->with('err','Failed to delete Campaign');
         }

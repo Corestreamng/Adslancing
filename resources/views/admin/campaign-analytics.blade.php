@@ -1,35 +1,28 @@
 @extends('admin.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Analytics')
 @section('content')
-{{-- include chart.js --}}
-<script src="{{asset('admin/js/chart.min.js')}}"></script>
+    {{-- include chart.js --}}
+    <script src="{{ asset('admin/js/chart.min.js') }}"></script>
     <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Analytics for: {{ $campaign->caption }}</h3>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-9">
-                                <h3><i class="fas fa-chart-bar"></i>  Total Campaigs</h3>
+                            <div class="col-7">
+                                <h3><i class="fas fa-chart-bar"></i> Target Clicks</h3>
                             </div>
-                            <div class="col-3">
-                                <h5>{{$data['total_campaigns']}}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-9">
-                                <h3><i class="fas fa-chart-bar"></i> Total Active Campaigs</h3>
-                            </div>
-                            <div class="col-3">
-                                <h5>25</h5>
+                            <div class="col-5">
+                                <h5>{{ $campaign->target_clicks }}</h5>
                             </div>
                         </div>
                     </div>
@@ -39,11 +32,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-9">
-                                <h3><i class="fas fa-chart-bar"></i>  Total Clicks</h3>
+                            <div class="col-7">
+                                <h3><i class="fas fa-chart-bar"></i> Target Shares</h3>
                             </div>
-                            <div class="col-3">
-                                <h5>{{$data['total_clicks']}}</h5>
+                            <div class="col-5">
+                                <h5>{{ $campaign->target_shares }}</h5>
                             </div>
                         </div>
                     </div>
@@ -53,11 +46,25 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-9">
-                                <h3><i class="fas fa-chart-bar"></i>  Total Shares</h3>
+                            <div class="col-7">
+                                <h3><i class="fas fa-chart-bar"></i> Total Clicks</h3>
                             </div>
-                            <div class="col-3">
-                                <h5>{{$data['total_shares']}}</h5>
+                            <div class="col-5">
+                                <h5>{{ $clicks }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-7">
+                                <h3><i class="fas fa-chart-bar"></i> Total Shares</h3>
+                            </div>
+                            <div class="col-5">
+                                <h5>{{ $shares }}</h5>
                             </div>
                         </div>
                     </div>
@@ -72,11 +79,12 @@
     </div>
     <script defer>
         $.ajax({
-            url: '/dashboard/getTotalStat',
+            url: '/dashboard/geStat/{{ $campaign->id }}',
             type: 'get',
             dataType: 'json',
-            success: function(response){
-                if(response != null){
+            success: function(response) {
+                if (response != null) {
+                    console.log(response);
                     const labels = [
                         'January',
                         'February',
@@ -120,21 +128,21 @@
                     the_shares[11] = response[1].dec;
 
                     var clicksData = {
-                        label: "Total Clicks Acheived",
+                        label: "Clicks Acheived",
                         data: the_clicks,
                         lineTension: 0,
                         fill: false,
                         minBarLength: 2,
-                        backgroundColor: 'red',
+                        backgroundColor: 'blue',
                     };
 
                     var sharesData = {
-                        label: "Total Shares Acheived",
+                        label: "Shares Acheived",
                         data: the_shares,
                         lineTension: 0,
                         fill: false,
                         minBarLength: 2,
-                        backgroundColor: 'green'
+                        backgroundColor: 'black',
                     };
 
                     const data = {
@@ -157,7 +165,7 @@
                 }
 
             },
-            error: function(x,y,z) {
+            error: function(x, y, z) {
                 console.log(x);
             }
         });

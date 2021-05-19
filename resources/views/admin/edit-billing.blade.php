@@ -146,21 +146,21 @@
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">*Campaign Target clicks</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input name="target_clicks" type="range" class="form-control-range" id="clicks_input" min="1" max="10000" step="50" value="{{$campaign->target_clicks}}" onchange="calBill()">
+                                            <input name="target_clicks" type="range" class="form-control-range" id="clicks_input" min="1" max="20000" step="50" value="{{$campaign->target_clicks}}" onchange="calBill()">
                                             <span></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12 p-0">*Campaign Target shares</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input name="target_shares" type="range" class="form-control-range" id="shares_input" min="1" max="10000" step="50" value="{{$campaign->target_shares}}" onchange="calBill()">
+                                            <input name="target_shares" type="range" class="form-control-range" id="shares_input" min="1" max="50000" step="50" value="{{$campaign->target_shares}}" onchange="calBill()">
                                             <span></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12 p-0">*Campaign duration(days)</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input name="target_days" type="number" class="form-control" id="days_input" min="1" max="365" step="1" value="{{$campaign->target_days}}" onchange="calBill()">
+                                            <input name="target_days" type="number" class="form-control" id="days_input" min="1" max="365" step="1" value="{{$campaign->target_days}}" onkeyup="calBill()">
                                             <span></span>
                                         </div>
                                     </div>

@@ -16,8 +16,8 @@ class CreateCampaignTagTable extends Migration
         Schema::create('campaign_tag', function (Blueprint $table) {
             $table->unsignedBigInteger('campaign_id');
             $table->unsignedBigInteger('tags_id');
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
-            $table->foreign('tags_id')->references('id')->on('tags');
+            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
+            $table->foreign('tags_id')->references('id')->on('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }

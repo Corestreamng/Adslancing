@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\CampaignController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\admin\PagesController;
 use App\Models\Campaign;
 
 /*
@@ -27,9 +28,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/user/dashboard', function (){
-    return view('admin.home');
-})->middleware(['auth']);
+Route::get('/user/dashboard', [PagesController::class,'dashboard'])->middleware(['auth']);
 
 Route::get('/user/{user_id}', function (){
     return view('admin.profile');
@@ -78,3 +77,9 @@ Route::put('/campaigns/update-image/{campaign_id}',[CampaignController::class,'u
 
 Route::put('/users/update->profile',[UsersController::class,'update_profile'])
     ->middleware(['auth'])->name('users.update-profile');
+
+Route::get('dashboard/getTotalStat/',[PagesController::class,'getTotalStat'])->middleware(['auth']);
+
+Route::get('dashboard/geStat/{campaign_id}',[PagesController::class,'getStat'])->middleware(['auth']);
+
+Route::get('campaigns/analytics/{campaign_id}',[PagesController::class,'campaignAnalytics'])->middleware(['auth'])->name('campaigns.analytics');

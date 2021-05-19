@@ -18,6 +18,26 @@ class Campaign extends Model
     }
 
     /**
+     * Get all of the clicks for the Campaign
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function clicks()
+    {
+        return $this->hasMany(Click::class);
+    }
+
+    /**
+     * Get all of the shares for the Campaign
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function shares()
+    {
+        return $this->hasMany(Share::class);
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -102,7 +102,7 @@
                 success: function(response){
                     if(response != null){
                         console.log(response);
-                        tag.hide();
+                        tag.remove();
                         NoOfTags--;
                         if(NoOfTags>4){
                             $('#proceed_btn').removeClass('disabled');

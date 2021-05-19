@@ -16,7 +16,23 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
-   <link href="{{asset('admin/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/css/style.min.css')}}" rel="stylesheet">
+
+    <script src="{{asset('admin/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('admin/js/app-style-switcher.js')}}"></script>
+    <script src="{{asset('admin/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+    <!--Wave Effects -->
+    <script src="{{asset('admin/js/waves.js')}}"></script>
+    <!--Menu sidebar -->
+    <script src="{{asset('admin/js/sidebarmenu.js')}}"></script>
+    <!--Custom JavaScript -->
+    <script src="{{asset('admin/js/custom.js')}}"></script>
+
+    <!--chartis chart-->
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -97,17 +113,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{asset('admin/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('admin/js/app-style-switcher.js')}}"></script>
-    <!--Wave Effects -->
-    <script src="{{asset('admin/js/waves.js')}}"></script>
-    <!--Menu sidebar -->
-    <script src="{{asset('admin/js/sidebarmenu.js')}}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{asset('admin/js/custom.js')}}"></script>
+    
 </body>
 
 </html>
